@@ -14,12 +14,12 @@ Este é um projeto de cadastro de produtos desenvolvido para matéria Linguagem 
 Para rodar o projeto:
 Escolha o GIT BASH no terminal do VS CODE
 
-1° composer install
+1° composer install(esperar até instalar totalmente todas dependencias)
 
 2°cp .env.example .env
 
 3° php artisan key:generate
 
-4° php artisan migrate
+4° php artisan migrate(caso apareça um YES/NO, escolher YES para criar o banco local SQLITE)
 
 5° php artisan serve
