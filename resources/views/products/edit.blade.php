@@ -46,6 +46,12 @@
                         <input type="number" name="quantity" class="form-control form-control-lg shadow-sm" value="{{ $product->quantity }}" required>
                     </div>
 
+                    {{-- Campo Armazém --}}
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Armazém</label>
+                        <input type="text" name="warehouse" class="form-control form-control-lg shadow-sm" value="{{ $product->warehouse }}" placeholder="Digite o armazém">
+                    </div>
+
                     <div class="col-12 d-flex justify-content-end">
                         <button type="submit" class="btn btn-success btn-lg px-4 shadow-sm">
                             Salvar Alterações
