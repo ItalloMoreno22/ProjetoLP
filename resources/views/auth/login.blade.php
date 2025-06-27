@@ -68,11 +68,29 @@
         .register-link a:hover {
             text-decoration: underline;
         }
+
+        .alert {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="login-box">
         <h2>Login</h2>
+
+        <!-- Exibir mensagem de erro -->
+        @if ($errors->any())
+            <div class="alert">
+                {{ $errors->first() }}
+            </div>
+        @endif
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
