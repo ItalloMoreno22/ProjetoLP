@@ -20,6 +20,14 @@ class RegisterController
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+        ], [
+            'name.required' => 'O campo nome é obrigatório.',
+            'email.required' => 'O campo e-mail é obrigatório.',
+            'email.email' => 'Informe um e-mail válido.',
+            'email.unique' => 'Este e-mail já está em uso.',
+            'password.required' => 'O campo senha é obrigatório.',
+            'password.min' => 'A senha deve ter no mínimo 6 caracteres.',
+            'password.confirmed' => 'As senhas não coincidem.',
         ]);
 
         User::create([

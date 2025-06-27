@@ -69,19 +69,44 @@
         .login-link a:hover {
             text-decoration: underline;
         }
+
+        .error-box {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .error-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="register-box">
         <h2>Cadastrar-se</h2>
+
+        @if ($errors->any())
+            <div class="error-box">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <label for="name">Nome:</label>
-            <input type="text" name="name" required>
+            <input type="text" name="name" value="{{ old('name') }}" required>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email" value="{{ old('email') }}" required>
 
             <label for="password">Senha:</label>
             <input type="password" name="password" required>
